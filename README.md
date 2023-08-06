@@ -1,27 +1,65 @@
-# **NAME**
+# mailjet-wrapper
 
-> Template repo for js functions
-
-[![Build Status](https://travis-ci.org/saxjst/__NAME__.svg?branch=master)](https://travis-ci.org/saxjst/__NAME__)
-[![Coverage Status](https://coveralls.io/repos/github/saxjst/__NAME__/badge.svg?branch=master)](https://coveralls.io/github/saxjst/__NAME__?branch=master)
-[![Maintainability](https://api.codeclimate.com/v1/badges/841af7743a474bb61775/maintainability)](https://codeclimate.com/github/saxjst/__NAME__/maintainability)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/saxjst/__NAME__.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/saxjst/__NAME__/context:javascript)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier/)
+
+> A simple and extensible Mailjet API wrapper for Node.js.
 
 ## Install
 
 ```
-$ npm install __NAME__
+$ npm install mailjet-wrapper
 ```
 
 ## Usage
 
 ```js
+const MailjetWrapper = require("mailjet-wrapper");
+
+const wrapper = new MailjetWrapper({
+  apiKey: "YOUR_MAILJET_API_KEY",
+  apiSecret: "YOUR_MAILJET_API_SECRET",
+  dependencies: {
+    mailjet: require('node-mailjet'),
+    logger: console
+  }
+});
+
+wrapper.send("Hello Mailjet", "This is a test email.", ["recipient@example.com"]);
 ```
 
 ## API
 
+### `new MailjetWrapper(config)`
+
+Creates a new instance of the MailjetWrapper.
+
+**Parameters**:
+
+| Param      | Type       | Description                                                           |
+| ---------- | ---------- | --------------------------------------------------------------------- |
+| config     | `Object`   | Configuration options, including `apiKey`, `apiSecret`, and others.   |
+
+### `wrapper.send(subject, textContent, recipients, [fromEmail], [fromName])` ⇒ <code>Promise&lt;Object&gt;</code>
+
+Sends an email using the Mailjet's API.
+
+**Returns**: <code>Promise&lt;Object&gt;</code> - A promise that resolves with details about the sent message.
+
+| Param        | Type       | Default                    | Description                     |
+| ------------ | ---------- | -------------------------- | ------------------------------- |
+| subject      | `string`   |                            | The subject of the email.       |
+| textContent  | `string`   |                            | The textual content of the email.|
+| recipients   | `string[]` |                            | List of email addresses to send the email to.|
+| fromEmail    | `string`   | "your-email@example.com"   | Sender's email address.         |
+| fromName     | `string`   | "Your Name"                | Sender's name.                  |
+
+**Example**:
+
+```js
+wrapper.send("Hello Mailjet", "This is a test email.", ["recipient@example.com"]);
+```
+
 ## License
 
-MIT © [saxjst](https://saxjst.com)
+MIT © [muceres](https://forgetheweb.eu)

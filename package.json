@@ -1,7 +1,7 @@
 {
-  "name": "__NAME__",
+  "name": "mailjet-wrapper",
   "version": "1.0.0",
-  "description": "Template repo for js functions",
+  "description": "A simple and extensible Mailjet API wrapper for Node.js.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -10,22 +10,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saxjst/__NAME__.git"
+    "url": "git+https://github.com/muceres/mailjet-wrapper.git"
   },
   "author": {
-    "name": "saxjst"
+    "name": "muceres"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/saxjst/__NAME__/issues"
+    "url": "https://github.com/muceres/mailjet-wrapper/issues"
   },
-  "homepage": "https://github.com/saxjst/__NAME__#readme",
+  "homepage": "https://github.com/muceres/mailjet-wrapper#readme",
   "engines": {
     "node": ">=10.16.3"
   },
-  "keywords": [],
+  "keywords": [
+    "mailjet",
+    "email",
+    "wrapper",
+    "nodejs",
+    "api"
+  ],
   "dependencies": {
-    "ramda": "0.28.0"
+    "node-mailjet": "^3.4.1"
   },
   "devDependencies": {
     "coveralls": "3.1.1",
