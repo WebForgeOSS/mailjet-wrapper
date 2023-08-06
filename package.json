@@ -1,0 +1,34 @@
+{
+  "name": "__NAME__",
+  "version": "1.0.0",
+  "description": "Template repo for js functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saxjst/__NAME__.git"
+  },
+  "author": {
+    "name": "saxjst"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saxjst/__NAME__/issues"
+  },
+  "homepage": "https://github.com/saxjst/__NAME__#readme",
+  "engines": {
+    "node": ">=10.16.3"
+  },
+  "keywords": [],
+  "dependencies": {
+    "ramda": "0.28.0"
+  },
+  "devDependencies": {
+    "coveralls": "3.1.1",
+    "jest": "28.1.3"
+  }
+}
